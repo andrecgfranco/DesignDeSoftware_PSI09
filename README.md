@@ -3,7 +3,7 @@
 Este projeto desenvolvido no âmbito da cadeira de PSI tem como objetivo a criação de um protótipo funcional de um aplicação de gestão de uma firma
 de serviços de táxis, recorrendo a conhecimentos tanto de front como backend, usando ferramentas como o Angular, Express e MongoDB para o desenvolvimento.
 
-A aplicação conta com 3 interfaces principais: Manager, Driver e Client. Cada interface, é dedicada à utilização dos diferentes tipos de agentes.
+A aplicação conta com 3 interfaces principais: Manager (mock login), Driver e Client. Cada interface, é dedicada à utilização dos diferentes tipos de agentes.
 
 ## Manager:
 - Nesta interface o user pode:
