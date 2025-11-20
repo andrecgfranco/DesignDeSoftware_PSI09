@@ -1,0 +1,35 @@
+3. Relações Entre Módulos (Frontend + Backend)
+
+Esta secção descreve como os módulos identificados interagem entre si durante o desenvolvimento e execução.
+
+Frontend (Angular)
+
+    Os módulos client, driver e manager dependem dos serviços presentes em services/ para obter dados e executar ações.
+
+    O módulo interfaces/ fornece tipagem e modelos utilizados por todos os outros módulos, reduzindo acoplamento e facilitando manutenção.
+
+    O módulo messages/ recebe dados de serviços presentes em services/ para apresentar notificações ao utilizador.
+
+    Os services/ comunicam diretamente com o backend através de chamadas HTTP REST, utilizando rotas definidas no módulo routes/ do Express.
+
+    app-routing.module.ts estabelece as rotas e liga URLs a componentes dos módulos client, driver, manager e login, garantindo navegação SPA.
+
+    app.module.ts centraliza e regista todos os módulos, componentes e serviços, promovendo coesão e reutilização no frontend.
+
+Backend (Express)
+
+    O módulo routes/ recebe pedidos HTTP dos serviços do frontend e encaminha-os para o controlador correspondente.
+
+    Os controllers/ usam os models/ para manipular dados na base MongoDB, aplicando regras de negócio e lógica de validação.
+
+    controllers/ têm dependência direta de models/, mas models não dependem de controllers.
+
+    app.js importa todos os módulos de rotas, liga-se à base de dados e disponibiliza a API ao frontend.
+
+    Não existe camada de services no backend: os controllers assumem a lógica de negócio (arquitetura Model–Route–Controller simples).
+
+Frontend -> Backend
+
+Os services/ do Angular comunicam com a API Express através de endpoints REST definidos em routes/.
+
+Cada submódulo de serviços (driver, ride, taxi-order, etc.) está alinhado com um conjunto correspondente de controladores e rotas no backend.

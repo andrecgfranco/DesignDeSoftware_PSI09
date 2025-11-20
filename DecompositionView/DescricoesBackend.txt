@@ -1,0 +1,82 @@
+DESCRIÇÕES — BACKEND (Express + MongoDB)
+Module: controllers/
+
+Contém os controladores responsáveis pela lógica de negócio e pelo processamento das requisições REST para comunicar com o frontend.
+Responsabilidades: validar pedidos, coordenar operações com os modelos, e devolver respostas HTTP adequadas.
+
+    Submódulos:
+
+        driverController.js — gestão de motoristas e os seus dados.
+
+        globalPriceController.js — gestão de políticas de preço.
+
+        priceController.js — gestão de preços de viagens com base no taxi escolhido.
+
+        reportController.js — produção de relatórios administrativos.
+
+        rideController.js — controlo do ciclo de vida de viagens.
+
+        shiftController.js — gestão dos turnos de motoristas.
+
+        taxiController.js — gestão de táxis e os seus dados.
+
+        taxiOrderController.js — criação e gestão de pedidos de táxi.
+
+Module: models/
+
+    Contém os modelos de dados MongoDB.
+    Responsabilidades: definir schemas, validações e estruturas de dados persistidas na base de dados.
+
+    Submódulos:
+
+    address.js — schema para endereços.
+
+    client.js — schema para clientes da plataforma.
+
+    driver.js — schema para motoristas.
+
+    globalPrice.js — schema para políticas de preço.
+
+    offer.js — schema para ofertas de viagens.
+
+    person.js — modelo genérico para entidades humanas (herdado por client/driver).
+
+    price.js — schema para preços calculados por viagem.
+
+    ride.js — schema para viagens completas.
+
+    shift.js — schema para turnos dos motoristas.
+
+    taxi.js — schema para dados sobre os veículos táxi.
+
+    taxiOrder.js — schema para pedidos de táxi.
+
+    timePeriod.js — schema para intervalos de tempo.
+
+Module: routes/
+
+Contém ficheiros de routing Express que definem endpoints REST da API.
+Responsabilidades: mapear cada URL para o controlador correspondente, isolando a camada de rede da regra de negócio.
+
+    Submódulos:
+
+    drivers.js — routes para criação e gestão de motoristas.
+
+    init.js — inicialização da BD e configuração global.
+
+    prices.js — routes para gestão de preços.
+
+    reports.js — routes para apresentação de relatórios.
+
+    rides.js — routes para criação e gestão de viagens.
+
+    shifts.js — routes para criação e gestão de turnos.
+
+    taxiOrders.js — routes para criação e gestão pedidos de táxi.
+
+    taxis.js — routes para criação e gestão de táxis.
+
+Module: app.js
+
+Ponto de entrada principal da aplicação backend.
+Responsabilidades: configurar a aplicação Express, ligar-se à base de dados MongoDB, aplicar middlewares, montar routes e iniciar o servidor HTTP.

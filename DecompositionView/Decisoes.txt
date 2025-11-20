@@ -1,0 +1,28 @@
+Racional da Decomposição (Design Rationale)
+
+Esta secção explica porquê a arquitetura foi organizada desta forma.
+
+Frontend
+
+    O frontend Angular foi dividido segundo um feature-based architecture, separando claramente funcionalidades (client, driver, manager).
+    Isto reduz acoplamento, melhora escalabilidade e permite evoluir cada área de forma independente.
+
+    Os services estão separados por domínio (ride, price, driver, postal-code, etc.), garantindo encapsulamento das operações REST e evitando duplicação de código nos componentes.
+
+    O módulo interfaces/ promove consistência porque centraliza definições de tipos e modelos usados em toda a aplicação.
+
+Backend
+
+    O backend segue o padrão Model–Route–Controller, que é adequado para APIs REST baseadas em Express.
+
+    A separação entre routes e controllers define fronteiras claras entre comunicação e lógica de negócio.
+
+    A divisão por modelo (driver, ride, taxiOrder, price, etc.) reflete diretamente o domínio do problema e facilita a extensão futura.
+
+    A ausência de uma camada intermédia reduz complexidade e é adequada ao contexto do projeto académico.
+
+Integração Frontend–Backend
+
+    A separação total entre Angular e Express respeita o princípio de independência tecnológica, permitindo evoluções ou substituições de cada lado sem impacto direto na outra camada.
+
+    A comunicação via REST é simples e universal, facilitando debugging, testes e integração com ferramentas externas.

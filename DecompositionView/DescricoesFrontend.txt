@@ -1,0 +1,90 @@
+DESCRIÇÕES — FRONTEND (Angular)
+Module: client/
+
+Contém os componentes e páginas da interface dedicadas ao utilizador final (cliente).
+Responsabilidades: permitir que o cliente faça pedidos de viagens introduzindo as moradas de partida e chegada ou selecionando no mapa. Fornece uma interface de espera.
+
+Module: driver/
+
+Inclui as páginas e componentes usados pelos motoristas.
+Responsabilidades: aceitar/recusar pedidos, criar e consultar turnos e requisitar carros.
+
+Module: manager/
+
+Agrupa as interfaces administrativas utilizadas por gestores da plataforma.
+Responsabilidades: Gestão e consulta de dados sobre táxis ou motoristas, consulta de reports de datas especificas e previsão de preços de viagens.
+
+Module: login/
+
+Módulo responsável por entrar na interface desejada e autenticação.
+Responsabilidades: apresentação das interfaces de login, validação de credenciais e inicio da sessão do utilizador.
+
+Module: messages/
+
+Contém componentes e lógica para apresentação de mensagens ao user.
+Responsabilidades: Apresenta mensagens ao utilizador referentes ao estado do sistema.
+
+Module: interfaces/
+
+Define todos os modelos e tipos TypeScript usados pelo frontend.
+Responsabilidades: garantir tipagem consistente entre módulos, definir estruturas de dados utilizadas pelos services e componentes.
+
+Module: services/
+
+Contém os serviços Angular responsáveis por comunicação com o backend e lógica de apoio à UI.
+Responsabilidades: encapsular chamadas HTTP, tratar respostas, aplicar validações leves e fornecer dados aos componentes.
+
+    Submódulos:
+        services/driver/
+
+        Serviços relacionados com dados de motoristas.
+
+        services/geo/
+
+        Serviços para geocodificação, validação de coordenadas, distância ou informação associada a localização.
+
+        services/message/
+
+        Serviço que trata a criação e apresentação de mensagens internas do sistema.
+
+        services/postal-code/
+
+        Serviço que recorre a uma API dos CTT para retornar uma localidade com base no codigo postal.
+
+        services/price/
+
+        Serviços que lidam com atribuição e alteração de preços das viagens
+
+        services/report/
+
+        Serviços relacionados com obtenção de relatórios administrativos.
+
+        services/ride/
+
+        Serviços para consulta e manipulação de viagens: criação, início, término, atualizações.
+
+        services/sessions/
+
+        Serviços para gerir estado de sessão de clientes e drivers.
+
+        services/shift/
+
+        Serviços relacionados com turnos de motoristas.
+
+        services/taxi/
+
+        Serviços responsáveis pela consulta e gestão dos dados dos veículos.
+
+        services/taxi-order/
+
+        Serviços utilizados para criar, gerir e acompanhar pedidos de táxi.
+
+Module: app-routing.module.ts
+
+Define o sistema de rotas e navegação da SPA (Single Page Application).
+Responsabilidades: mapear URLs para módulos e componentes, gerir lazy-loading e separação de funcionalidades.
+
+Module: app.module.ts
+
+Módulo raiz da aplicação Angular.
+Responsabilidades: registar módulos, serviços principais e dependências essenciais.
