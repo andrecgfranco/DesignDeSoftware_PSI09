@@ -1,0 +1,114 @@
+@startuml
+title Uses View - Backend (Express + MongoDB) [Versão Média]
+
+package "Backend" {
+
+    [app_js]
+
+    package "routes" {
+        [drivers_routes]
+        [prices_routes]
+        [reports_routes]
+        [rides_routes]
+        [shifts_routes]
+        [taxis_routes]
+        [taxiOrders_routes]
+        [init_routes]
+    }
+
+    package "controllers" {
+        [driverController]
+        [priceController]
+        [globalPriceController]
+        [reportController]
+        [rideController]
+        [shiftController]
+        [taxiController]
+        [taxiOrderController]
+    }
+
+    package "models" {
+        [driver_model]
+        [client_model]
+        [price_model]
+        [globalPrice_model]
+        [offer_model]
+        [ride_model]
+        [shift_model]
+        [taxi_model]
+        [taxiOrder_model]
+        [address_model]
+        [timePeriod_model]
+        [person_model]
+    }
+
+    [mongoose]
+}
+
+' === app.js dependencies ===
+app_js --> routes : mounts routes
+app_js --> mongoose : connects to DB
+
+' === routes use controllers ===
+drivers_routes --> driverController : uses
+prices_routes --> priceController : uses
+reports_routes --> reportController : uses
+rides_routes --> rideController : uses
+shifts_routes --> shiftController : uses
+taxis_routes --> taxiController : uses
+taxiOrders_routes --> taxiOrderController : uses
+init_routes --> globalPriceController : uses
+
+' === controllers use models ===
+driverController --> driver_model : uses
+driverController --> shift_model : uses
+
+priceController --> price_model : uses
+
+globalPriceController --> globalPrice_model : uses
+
+reportController --> ride_model : uses
+reportController --> shift_model : uses
+reportController --> taxi_model : uses
+reportController --> driver_model : uses
+
+rideController --> ride_model : uses
+rideController --> shift_model : uses
+rideController --> price_model : uses
+rideController --> timePeriod_model : uses
+
+shiftController --> shift_model : uses
+shiftController --> taxi_model : uses
+
+taxiController --> taxi_model : uses
+taxiController --> ride_model : uses
+taxiController --> shift_model : uses
+
+taxiOrderController --> taxiOrder_model : uses
+taxiOrderController --> driver_model : uses
+taxiOrderController --> taxi_model : uses
+
+
+' === INTERNAL MODEL DEPENDENCIES ===
+
+' Drivers and Clients depend on Person (inheritance or reuse)
+driver_model --> person_model
+client_model --> person_model
+
+' Shift links a driver and a taxi
+shift_model --> driver_model
+shift_model --> taxi_model
+shift_model --> timePeriod_model
+
+' Ride depends on multiple models
+ride_model --> address_model
+ride_model --> taxiOrder_model
+ride_model --> timePeriod_model
+
+
+' TaxiOrder depends on driver, client, taxi, address
+taxiOrder_model --> driver_model
+taxiOrder_model --> address_model
+taxiOrder_model --> offer_model
+
+@enduml
