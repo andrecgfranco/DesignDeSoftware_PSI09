@@ -11,7 +11,7 @@ Responsabilidades: aceitar/recusar pedidos, criar e consultar turnos e requisita
 
 Module: manager/
 
-Agrupa as interfaces administrativas utilizadas por gestores da plataforma.
+Inclui as paginas e componentes utilizados por gestores da plataforma.
 Responsabilidades: Gestão e consulta de dados sobre táxis ou motoristas, consulta de reports de datas especificas e previsão de preços de viagens.
 
 Module: login/
@@ -81,7 +81,7 @@ Responsabilidades: encapsular chamadas HTTP, tratar respostas, aplicar validaç�
 
 Module: app-routing.module.ts
 
-Define o sistema de rotas e navegação da SPA (Single Page Application).
+Define o sistema de rotas.
 Responsabilidades: mapear URLs para módulos e componentes, gerir lazy-loading e separação de funcionalidades.
 
 Module: app.module.ts
