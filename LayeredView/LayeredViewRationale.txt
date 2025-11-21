@@ -1,0 +1,7 @@
+A aplicação está organizada em três camadas para garantir separação de responsabilidades e facilitar a evolução do sistema. A camada de apresentação (Angular) contém os componentes, services e interfaces responsáveis pela interação com o utilizador. Esta camada apenas comunica com a camada de aplicação através de pedidos HTTP.
+
+A camada de aplicação (Express routes e controllers) trata da lógica de negócio e validação, recebendo pedidos do frontend e coordenando operações. Esta camada depende da camada de dados para obter e persistir informação.
+
+A camada de domínio e dados (models e ligação MongoDB) define as estruturas de dados do sistema e gere o acesso à base de dados. As camadas superiores não interagem diretamente com a base de dados, o que reduz acoplamento e melhora a modifiabilidade.
+
+O fluxo de dependências segue a regra “allowed-to-use”: cada camada utiliza apenas a camada imediatamente abaixo, garantindo clareza arquitetural e um design fácil de manter e extender.

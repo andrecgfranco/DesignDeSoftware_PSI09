@@ -1,0 +1,29 @@
+@startuml
+title Layered View - Taxi Management System (Angular + Express + MongoDB)
+
+package "Layer 1: Presentation (Frontend Angular)" {
+    [Angular Components]
+    [Services]
+    [Interfaces]
+}
+
+package "Layer 2: Application / Service Layer (Express)" {
+    [Routes]
+    [Controllers]
+}
+
+package "Layer 3: Domain & Data Layer (Mongoose)" {
+    [Models]
+    [MongoDB Connection]
+}
+
+
+' Allowed-to-use relations
+
+"Layer 1: Presentation (Frontend Angular)" --> "Layer 2: Application / Service Layer (Express)"
+"Layer 2: Application / Service Layer (Express)" --> "Layer 3: Domain & Data Layer (Mongoose)"
+
+
+
+
+@enduml
