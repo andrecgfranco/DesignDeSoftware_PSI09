@@ -1,0 +1,20 @@
+Data Model View
+---------------
+
+Esta vista descreve as entidades principais do sistema e as relações entre elas. O modelo segue a estrutura definida nos schemas do MongoDB, refletindo as dependências reais usadas na lógica de negócio.
+
+Principais entidades:
+- Person representa dados comuns de utilizadores. Driver e Client especializam esta entidade.
+- Taxi e Address representam veiculos e moradas respectivamente.
+- TaxiOrder agrega informação inicial de um pedido de táxi, incluindo endereço, condutor e ofertas.
+- Ride representa a viagem final, associada ao pedido, endereço e período temporal.
+- Shift representa turnos de motoristas, relacionando-se com Driver, Taxi e TimePeriod.
+- Offer contém propostas feitas para um pedido, com valores e estimativas.
+
+Relações principais:
+- Driver e Client herdam atributos de Person.
+- Shift liga um Driver e um Taxi a um TimePeriod.
+- TaxiOrder agrega Address, Driver e Offer.
+- Ride liga TaxiOrder, Address e TimePeriod.
+
+Este modelo suporta extensibilidade clara, evita redundância e orienta a implementação dos controladores e serviços que interagem com a base de dados.

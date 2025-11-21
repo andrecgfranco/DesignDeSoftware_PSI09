@@ -1,0 +1,80 @@
+@startuml
+title Data Model View - Taxi Management System (SEI Style Boxes)
+
+skinparam dpi 160
+skinparam rectangle {
+  BackgroundColor #DDE2E5
+  BorderColor #7A7A7A
+  RoundCorner 5
+  FontSize 14
+}
+skinparam defaultFontName Arial
+
+' ============================================
+' ENTITY BOXES (SEI STYLE)
+' ============================================
+rectangle "«entity» Person\n----\n+ nif\n+ name\n+ gender" as Person
+
+rectangle "«entity» Driver\n----\n+ birthYear\n+ driversLicense\n+ address\n+ createdAt" as Driver
+
+rectangle "«entity» Client" as Client
+
+rectangle "«entity» Address\n----\n+ street\n+ doorNumber\n+ postalCode\n+ locality" as Address
+
+rectangle "«entity» Taxi\n----\n+ licensePlate\n+ purchaseYear\n+ brand\n+ modelName\n+ comfortLevel" as Taxi
+
+rectangle "«entity» Offer\n----\n+ driver\n+ location\n+ distance\n+ taxi\n+ price" as Offer
+
+rectangle "«entity» TaxiOrder\n----\n+ client.name\n+ client.nif\n+ client.gender\n\n+ location.lat\n+ location.lon\n\n+ destination.lat\n+ destination.lon\n\n+ locationAddress\n+ destinationAddress\n\n+ numberOfPeople\n\n+ status\n+ comfortLevel\n\n+ offer\n\n+ rejectedDrivers[]" as TaxiOrder
+
+rectangle "«entity» TimePeriod\n----\n+ start\n+ end" as TimePeriod
+
+rectangle "«entity» Shift\n----\n+ driver\n+ timePeriod\n+ taxi" as Shift
+
+rectangle "«entity» Ride\n----\n+ client.name\n+ client.nif\n+ client.gender\n\n+ shift\n+ timePeriod\n\n+ start.lat\n+ start.lon\n\n+ end.lat\n+ end.lon\n\n+ startAddress\n+ endAddress\n\n+ distanceKm\n+ price\n+ sequenceNumber\n+ numberOfPeople\n\n+ taxiOrder" as Ride
+
+
+' ============================================
+' GENERALIZATION
+' ============================================
+Person <|-- Driver
+Person <|-- Client
+
+
+' ============================================
+' RELATIONSHIPS
+' ============================================
+
+Driver "1" -- "0..*" Shift
+Taxi  "1" -- "0..*" Shift
+TimePeriod "1" -- "1" Shift
+
+TaxiOrder "1" -- "1" Address : address
+TaxiOrder "0..*" -- "1" Offer
+TaxiOrder "0..*" -- "1" Driver
+TaxiOrder "0..*" -- "1" Client
+
+Ride "1" -- "1" TaxiOrder
+Ride "1" -- "1" Address : startAddress
+Ride "1" -- "1" Address : endAddress
+Ride "1" -- "1" TimePeriod
+
+
+' ============================================
+' LEGEND / KEY (SEI Style)
+' ============================================
+legend right
+  <b>Key</b>
+
+  «entity»  Class
+
+  ---- Association
+
+  Cardinality:
+    1       Exactly one
+    0..1    Zero or one
+    1..*    One or more
+    0..*    Zero or more
+endlegend
+
+@enduml
