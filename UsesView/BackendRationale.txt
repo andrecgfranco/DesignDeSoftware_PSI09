@@ -1,0 +1,17 @@
+A organização de dependências no backend segue a arquitetura típica de uma aplicação Express estruturada em três níveis:
+routes, controllers e models. As routes dependem diretamente dos controllers porque apenas recebem os pedidos HTTP e encaminham-nos para a lógica de negócio adequada. 
+Esta separação mantém os pontos de entrada simples e facilita a expansão futura da API.
+
+Os controllers dependem dos models, uma vez que são responsáveis pela validação dos pedidos, aplicação das regras de negócio e acesso aos dados guardados na base de dados.
+Cada controlador utiliza apenas os modelos necessários ao seu domínio específico, o que reduz o acoplamento entre módulos e permite que alterações num modelo afetem apenas os controladores diretamente relacionados.
+
+O ficheiro app.js depende das routes e de mongoose, pois é o componente que inicializa a aplicação, estabelece a ligação à base de dados e monta todos os endpoints.
+Este papel central justifica a sua posição no topo das dependências.
+
+As dependências entre modelos refletem a estrutura natural das entidades do sistema.
+Os modelos driver e client reutilizam o modelo person para evitar duplicação de atributos. 
+O modelo shift referencia motoristas, táxis e períodos de tempo, representando a associação entre turnos e recursos. 
+O modelo ride relaciona-se com pedidos, horários, endereços, táxis e preços, uma vez que uma viagem integra diversos elementos operacionais. 
+Já o modelo taxiOrder liga motoristas, ofertas e endereços, ilustrando a estrutura de um pedido de táxi.
+
+Estas dependências são intencionais e traduzem o domínio real da aplicação, permitindo consistência na validação, redução de redundância e uma evolução mais controlada do sistema.

@@ -1,0 +1,9 @@
+Rationale para o frontend: 
+
+A estrutura de dependências no frontend reflete a organização típica de uma aplicação Angular modular.
+Os módulos client, driver, manager, login e messages usam os services porque toda a comunicação com o backend e lógica de dados está concentrada nesses serviços. Assim, os componentes mantêm-se simples e focados na interface.
+
+Estes módulos também usam as interfaces, que garantem consistência nos dados trocados dentro da aplicação. Os services dependem igualmente das interfaces, pois delas obtêm os tipos necessários para estruturar pedidos e respostas.
+
+O AppRoutingModule depende dos módulos funcionais porque é responsável por mapear as suas rotas.
+Já o AppModule limita-se a importar os módulos principais e a declarar componentes — não usa diretamente services ou interfaces — refletindo o seu papel de composição e inicialização da aplicação.
