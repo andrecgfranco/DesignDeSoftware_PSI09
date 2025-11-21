@@ -1,0 +1,4 @@
+A generalização no domínio centra-se no modelo Person, que captura atributos comuns a todas as entidades humanas do sistema.
+Os modelos Driver e Client especializam este módulo base, acrescentando apenas os dados específicos para cada papel.
+Esta decisão reduz duplicação, facilita a validação de dados partilhados e permite estender o sistema de forma mais consistente caso surjam novos tipos de utilizador no futuro. 
+A relação é de herança direta, não existindo ciclos ou múltipla herança.
