@@ -1,0 +1,74 @@
+Install View 
+
+instalar dependencias: 
+
+npm install 
+
+correr frontend (em angular-psi-frontend): 
+
+cd angular-psi-frontend
+ng serve
+
+correr backend (em express-psi-backend): 
+
+cd express-psi-backend
+npm run serverstart (Windows) / npm start (Linux)
+
+
+angular-psi-frontend/    ------para executar: ng serve
+└── src/
+    └── app/
+        ├── client/
+        ├── driver/
+        ├── manager/
+        ├── login/
+        ├── messages/
+        ├── interfaces/
+        ├── services/
+        │   ├── driver/
+        │   ├── geo/
+        │   ├── message/
+        │   ├── postal-code/
+        │   ├── price/
+        │   ├── report/
+        │   ├── ride/
+        │   ├── sessions/
+        │   ├── shift/
+        │   ├── taxi/
+        │   └── taxi-order/
+        ├── app-routing.module.ts
+        └── app.module.ts
+
+express-psi-backend/    -------para executar: npm run serverstart (Windows) ou npm start
+├── controllers/
+│   ├── driverController.js
+│   ├── globalPriceController.js
+│   ├── priceController.js
+│   ├── reportController.js
+│   ├── rideController.js
+│   ├── shiftController.js
+│   ├── taxiController.js
+│   └── taxiOrderController.js
+├── models/
+│   ├── address.js
+│   ├── client.js
+│   ├── driver.js
+│   ├── globalPrice.js
+│   ├── offer.js
+│   ├── person.js
+│   ├── price.js
+│   ├── ride.js
+│   ├── shift.js
+│   ├── taxi.js
+│   ├── taxiOrder.js
+│   └── timePeriod.js
+├── routes/
+│   ├── drivers.js
+│   ├── init.js
+│   ├── prices.js
+│   ├── reports.js
+│   ├── rides.js
+│   ├── shifts.js
+│   ├── taxiOrders.js
+│   └── taxis.js
+└── app.js

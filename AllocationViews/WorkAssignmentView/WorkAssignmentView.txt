@@ -1,0 +1,18 @@
+WorkAssignmentView
+
+ ______________________________________________________________________________________________________
+| Módulo                      | Submódulo                        | Unidade Organizacional              |
+| ----------------------------|----------------------------------| ------------------------------------|
+| Frontend (Angular)          | Interface do Cliente             | Equipa Frontend                     |
+|                             | Interface do Motorista           | Equipa Frontend                     |
+|                             | Interface do Gestor              | Equipa Frontend                     |
+|                             | Sistema de Routing               | Equipa Frontend                     |
+|                             | Serviços                         | Equipa Frontend                     |
+|                             | Interfaces                       | Equipa Frontend                     |
+|-----------------------------|----------------------------------|-------------------------------------|
+| Backend (Express/MongoDB)   | Controladores                    | Equipa Backend                      |
+|                             | Models                           | Equipa Backend                      |
+|                             | Sistema de Routing               | Equipa Backend                      |
+|                             | Modelos Mongoose                 | Equipa Backend                      |
+|                             | Conexão à Base de Dados          | Equipa Backend                      |
+|______________________________________________________________________________________________________|

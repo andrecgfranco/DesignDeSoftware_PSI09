@@ -1,0 +1,28 @@
+Deployment View
+
+Esta vista descreve como os elementos de software são executados no ambiente físico do sistema.
+
+1. Elementos de Software
+- Frontend: Aplicação Angular (SPA) executada no browser do utilizador. Inclui componentes e serviços que enviam pedidos HTTP ao backend.
+- Backend: Servidor Node.js/Express que contém as routes, controllers e a camada Mongoose para acesso à base de dados.
+- Base de Dados: Cluster MongoDB Atlas alojado na cloud, acedido remotamente pelo backend.
+
+2. Elementos de Hardware / Ambiente
+- Dispositivo do Utilizador: PC ou smartphone com browser moderno, onde a Angular SPA é executada.
+- Servidor de Aplicação: Máquina virtual Linux que executa o processo Node.js/Express e expõe a API pública.
+- Cluster MongoDB Atlas: Base de dados alojada na cloud, com ligação segura através de TLS.
+- Internet: Rede que permite comunicações HTTPS entre frontend e backend, e TLS entre backend e MongoDB Atlas.
+
+3. Relações de Alocação
+- A Angular SPA está alocada ao browser do utilizador e é executada localmente.
+- O backend (Express + controllers + Mongoose) está alocado ao servidor de aplicação.
+- A base de dados (MongoDB Atlas) está alocada a um cluster externo na cloud.
+- A comunicação entre backend e a base de dados é remota, via TLS.
+- Não existe migração dinâmica: as alocações são estáticas durante a execução.
+
+4. Impacto na Qualidade
+- Disponibilidade melhorada pela redundância do MongoDB Atlas.
+- Fiabilidade aumentada pela separação entre aplicação e base de dados.
+- Desempenho depende da latência da ligação entre backend e Atlas.
+- Segurança garantida por HTTPS e TLS.
+- Escalabilidade facilitada graças ao backend e à base de dados na cloud.

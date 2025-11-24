@@ -1,0 +1,48 @@
+@startuml
+title Deployment View 
+
+skinparam rectangle {
+  BackgroundColor #E6F2FF
+  BorderColor #4A6C8C
+  RoundCorner 8
+}
+skinparam node {
+  BackgroundColor #F2F2F2
+  BorderColor #666666
+}
+
+' =========================
+'   ENVIRONMENT NODES
+' =========================
+
+node "User Device\n(Browser)" as UserDevice {
+  artifact "Angular SPA" as AngularSPA
+}
+
+node "Application Server\n(Node.js / Express)" as AppServer {
+  component "Express App\n(app.js)" as Express
+  component "Routes\n(Drivers, TaxiOrders, Rides,...)" as Routes
+  component "Controllers" as Controllers
+  component "Mongoose" as Mongoose
+}
+
+node "MongoDB Atlas Cluster\n(cloud-hosted database)" as Atlas {
+  database "MongoDB Atlas\n(Collections)" as MongoDB
+}
+
+cloud Internet
+
+' =========================
+'   CONNECTIONS
+' =========================
+
+AngularSPA --> Express : HTTPS Requests
+Express --> Routes
+Routes --> Controllers
+
+Controllers --> Mongoose
+Mongoose --> Internet : TLS / SRV DNS
+Internet --> Atlas : outbound connection
+Atlas --> MongoDB
+
+@enduml
