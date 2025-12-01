@@ -5,20 +5,20 @@
       <h1 font-size="larger">{{driver.name}} Details:</h1>
       <mat-list>
         <mat-list-item>
-          <span matListItemTitle id="title">NIF:</span>
-          <span matListItemLine id="line">{{ driver.nif }}</span>
+          <span matListItemTitle class="title">NIF:</span>
+          <span matListItemLine class="line">{{ driver.nif }}</span>
         </mat-list-item>
         <mat-list-item>
-          <span matListItemTitle id="title">Address:</span>
+          <span matListItemTitle class="title">Address:</span>
           <span matListItemLine>{{ driver.address.street }}</span>
         </mat-list-item>
         <mat-list-item>
-          <span matListItemTitle id="title">Birth Year:</span>
-          <span matListItemLine id="line">{{ driver.birthYear }}</span>
+          <span matListItemTitle class="title">Birth Year:</span>
+          <span matListItemLine class="line">{{ driver.birthYear }}</span>
         </mat-list-item>
         <mat-list-item>
-          <span matListItemTitle id="title">Gender:</span>
-          <span matListItemLine id="line">{{ driver.gender }}</span>
+          <span matListItemTitle class="title">Gender:</span>
+          <span matListItemLine class="line">{{ driver.gender }}</span>
         </mat-list-item>
       </mat-list>
       <button mat-stroked-button type="button" id="addRow" (click)="goToEditDriver()">
