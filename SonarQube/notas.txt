@@ -40,14 +40,6 @@ Conclusões rápidas
 
 Issues a resolver: 
 
-  Foi identificado um conjunto de ocorrências relacionadas com a propriedade `standalone: false`. 
-  O SonarQube sugere a adoção de componentes standalone para aumentar modularidade e reduzir 
-  dependência de NgModules, mas esta alteração exige reestruturação profunda de toda a aplicação Angular. 
-
-  Por implicar reescrita arquitetural em larga escala, esta recomendação foi documentada como melhoria 
-  futura e não aplicada no âmbito deste trabalho, dado que a mudança impactaria o funcionamento global 
-  sem ganho imediato proporcional.
-
   - Segurança no ride controller (Input sujeito a injections): DONE
     Severity: Blocker
     Change this code to not construct database queries directly from user-controlled data.
@@ -65,3 +57,60 @@ Issues a resolver:
     Severity: High
     Variables should be declared with "let" or "const"
     Solução: usar "let" ou "const" inves de "var"
+
+  Foi identificado um conjunto de ocorrências com severidade "Blocker" relacionadas com a propriedade `standalone: false`. 
+  O SonarQube sugere a adoção de componentes standalone para aumentar modularidade e reduzir 
+  dependência de NgModules, mas esta alteração exige reestruturação profunda de toda a aplicação Angular. 
+
+  Por implicar reescrita arquitetural em larga escala, esta recomendação foi documentada como melhoria 
+  futura e não aplicada no âmbito deste trabalho, dado que a mudança impactaria o funcionamento global 
+  sem ganho imediato proporcional.
+
+  Os issues restantes prendem-se maioritariamente em questões de baixa importancia para o funcionamento do projeto, pequenas alteração espalhadas por 
+  todos os ficheiros como: 
+    Imports não usados ou repetidos, minimal contrast requirements, duplicações e recomendações como usar "Number.isNaN" invés de "isNaN"
+
+
+Qualidade Geral - Após correções
+- Quality Gate → PASSED
+- Security sem problemas críticos
+- Remoção de todos os issues possiveis com severidade High e Blocker
+- Maintainability ainda com elevada incidência de issues
+
+Security
+- 0 issues ativas após correções (antes havia 1)
+- 4 Security Hotspots (não críticos, apenas recomendação de revisão)
+- Nenhuma vulnerabilidade crítica identificada
+
+Reliability
+- Após correções → 23 issues ativas
+- Sem problemas classificados como High severity
+
+Maintainability
+- Após melhorias → 312 issues restantes  
+- Principais causas:
+  • Falhas de contraste CSS  
+  • Código redundante / imports não utilizados  
+  • Melhorias de legibilidade e estrutura  
+  • Recomendações standalone Angular (não implementadas devido a impacto global)
+
+Duplicação
+- Frontend: 1.5%  
+- Backend: 8.5%  
+→ Existe margem para remoção e modularização de lógica repetida no servidor
+
+Conclusão Geral
+- O projeto apresenta boa segurança e fiabilidade para trabalho académico.
+- Manutenibilidade ainda a melhorar, mas já com evolução visível após intervenções.
+- Recomendações futuras:
+  → refactor modular Angular  
+  → melhorar contraste e acessibilidade  
+  → reduzir duplicação lógica no backend
+
+| Métrica             | Antes       | Depois      |
+|---------------------|-------------|-------------|
+| Security Issues     | 1           | 0           |
+| Reliability Issues  | 29          | 23          |
+| Maintainability     | 351         | 312         |
+| Duplicação Backend  | 8.5%        | 8.5%        |
+| Duplicação Frontend | 1.5%        | 1.5%        |
