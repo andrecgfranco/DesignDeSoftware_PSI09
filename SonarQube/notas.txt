@@ -53,11 +53,15 @@ Issues a resolver:
     Change this code to not construct database queries directly from user-controlled data.
     NoSQL operations should not be vulnerable to injection attacks  
     Solução: Normalizar e validar o input usado na query, invés de usar o input diretamente na query, de modo a evitar injections.
-  -  Duplicate id "2buttons" em Client-wainting (reliability e maintainability): DONE
+  - Duplicate IDs: DONE
     Severity: High
     HTML elements should have unique IDs 
-    Solução: renomear o ID para algo unico.
-  - Implementacao de OnInit() do angular:
+    Solução: renomear o ID para algo unico ou trocar IDs para classes.
+  - Implementacao de OnInit() do angular (todos os componentes): DONE
     Severity: Blocker
     Lifecycle interface 'OnInit' should be implemented for method 'ngOnInit'. 
     Solução: importar e adicionar as assinaturas das classes "implements OnInit"
+  - Unexpected var use let or const instead (vários componentes): 
+    Severity: High
+    Variables should be declared with "let" or "const"
+    Solução: usar "let" ou "const" inves de "var"

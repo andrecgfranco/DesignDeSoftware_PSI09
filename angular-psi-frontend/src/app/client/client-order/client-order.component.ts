@@ -214,8 +214,8 @@ export class ClientOrderComponent implements OnInit{
   onSubmitOrder(): void {
 
     // primeiro verificar os campos pessoais
-    var nif = (document.getElementById('nif') as HTMLInputElement).value.trim();
-    var name = (
+    let nif = (document.getElementById('nif') as HTMLInputElement).value.trim();
+    let name = (
       document.getElementById('name') as HTMLInputElement
     ).value.trim();
 
@@ -224,7 +224,7 @@ export class ClientOrderComponent implements OnInit{
       return;
     }
 
-    var nifRegex = /^\d{9}$/;
+    let nifRegex = /^\d{9}$/;
     if (!nifRegex.test(nif)) {
       alert('NIF must contain 9 digits.');
       return;
@@ -265,12 +265,12 @@ export class ClientOrderComponent implements OnInit{
       return;
     }
 
-    var postalCodeRegex = /^[0-9]{4}-[0-9]{3}$/;
+    let postalCodeRegex = /^[0-9]{4}-[0-9]{3}$/;
     if (!postalCodeRegex.test(postCode)) {
       alert('Postal code must be in format: 1234-567.');
       return;
     }
-    var doorNumberRegex = /^[A-Za-z0-9]{1,10}$/;
+    let doorNumberRegex = /^[A-Za-z0-9]{1,10}$/;
     if (!doorNumberRegex.test(doorNumber)) {
       alert(
         'Door number must be alphanumeric characters with length 1-10.'
