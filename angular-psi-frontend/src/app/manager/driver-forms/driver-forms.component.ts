@@ -62,13 +62,13 @@ export class ManagerDriverFormsComponent {
   onSubmitDriver(): void {
     // primeiro verificar os campos do endereco
 
-    var street = (
+    let street = (
       document.getElementById('street') as HTMLInputElement
     ).value.trim();
-    var postalCode = (
+    let postalCode = (
       document.getElementById('postalCode') as HTMLInputElement
     ).value.trim();
-    var doorNumber = (
+    let doorNumber = (
       document.getElementById('doorNumber') as HTMLInputElement
     ).value.trim();
 
@@ -77,12 +77,12 @@ export class ManagerDriverFormsComponent {
       return;
     }
 
-    var postalCodeRegex = /^[0-9]{4}-[0-9]{3}$/;
+    let postalCodeRegex = /^[0-9]{4}-[0-9]{3}$/;
     if (!postalCodeRegex.test(postalCode)) {
       alert('Postal code must be in format: 1234-567.');
       return;
     }
-    var doorNumberRegex = /^[A-Za-z0-9]{1,10}$/;
+    let doorNumberRegex = /^[A-Za-z0-9]{1,10}$/;
     if (!doorNumberRegex.test(doorNumber)) {
       alert(
         'Door number must be alphanumeric characters with length 1-10.'
@@ -98,14 +98,14 @@ export class ManagerDriverFormsComponent {
     };
 
     // verificar os campos do motorista
-    var nif = (document.getElementById('nif') as HTMLInputElement).value.trim();
-    var name = (
+    let nif = (document.getElementById('nif') as HTMLInputElement).value.trim();
+    let name = (
       document.getElementById('name') as HTMLInputElement
     ).value.trim();
-    var birthYear = (
+    let birthYear = (
       document.getElementById('birthYear') as HTMLInputElement
     ).value.trim();
-    var driversLicense = (
+    let driversLicense = (
       document.getElementById('driversLicense') as HTMLInputElement
     ).value.trim();
 
@@ -114,12 +114,12 @@ export class ManagerDriverFormsComponent {
       return;
     }
 
-    var nifRegex = /^\d{9}$/;
+    let nifRegex = /^\d{9}$/;
     if (!nifRegex.test(nif)) {
       alert('NIF must contain 9 digits.');
       return;
     }
-    var licenseRegex = /^[A-Z0-9]{1,12}$/;
+    let licenseRegex = /^[A-Z0-9]{1,12}$/;
     if (!licenseRegex.test(driversLicense)) {
       alert('License must only contain capital and numeric characters.');
       return;

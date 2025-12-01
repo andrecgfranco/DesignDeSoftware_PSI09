@@ -121,13 +121,13 @@ router.get("/", asyncHandler(async (req, res, next) => {
   await TaxiOrder.insertMany(taxiOrders);
 
   // adiciona turnos ativos aos motoristas
-  var now = new Date();
-  var threeHoursLater = new Date(now.getTime() + 180 * 60 * 1000);
+  let now = new Date();
+  let threeHoursLater = new Date(now.getTime() + 180 * 60 * 1000);
 
-  var allDrivers = await Driver.find();
-  var allTaxis = await Taxi.find();
+  let allDrivers = await Driver.find();
+  let allTaxis = await Taxi.find();
 
-  var shifts = allDrivers.map((driver, i) => ({
+  let shifts = allDrivers.map((driver, i) => ({
     driver: driver._id,
     taxi: allTaxis[i % allTaxis.length]._id, // distribui taxis circularmente
     timePeriod: {

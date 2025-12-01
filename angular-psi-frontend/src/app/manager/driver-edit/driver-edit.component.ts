@@ -75,13 +75,13 @@ export class ManagerDriverEditComponent implements OnInit {
       alert('Drivers License is required.');
       return;
     }
-    var nifRegex = /^\d{9}$/;
+    let nifRegex = /^\d{9}$/;
     if (!nifRegex.test(this.driver!.nif)) {
       alert('NIF must contain 9 digits.');
       return;
     }
 
-    var licenseRegex = /^[A-Z0-9]{1,12}$/;
+    let licenseRegex = /^[A-Z0-9]{1,12}$/;
     if (!licenseRegex.test(this.driver!.driversLicense)) {
       alert('License must only contain capital and numeric characters.');
       return;
@@ -120,7 +120,7 @@ export class ManagerDriverEditComponent implements OnInit {
       return;
     }
 
-    var doorNumberRegex = /^[A-Za-z0-9]{1,10}$/;
+    let doorNumberRegex = /^[A-Za-z0-9]{1,10}$/;
     if (!doorNumberRegex.test(this.driver!.address.doorNumber)) {
       alert('Door number must be alphanumeric characters with length 1-10.');
       return;

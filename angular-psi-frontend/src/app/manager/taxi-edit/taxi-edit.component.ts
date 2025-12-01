@@ -49,7 +49,7 @@ export class ManagerTaxiEditComponent implements OnInit {
       alert("All fields must be entered");
       return
     }
-    var licensePlateRegex = /^[a-zA-Z0-9]{2}-[a-zA-Z0-9]{2}-[a-zA-Z0-9]{2}$/;
+    let licensePlateRegex = /^[a-zA-Z0-9]{2}-[a-zA-Z0-9]{2}-[a-zA-Z0-9]{2}$/;
     if (!licensePlateRegex.test(this.taxi.licensePlate)) {
       alert("License plate must be in the format: AA-00-AA");
       return;

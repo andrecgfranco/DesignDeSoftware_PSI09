@@ -1,24 +1,24 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors');
 
 // sprint 1
-var taxisRouter = require('./routes/taxis');
-var driversRouter = require('./routes/drivers');
-var initRouter = require('./routes/init');
-var pricesRouter = require('./routes/prices');
+const taxisRouter = require('./routes/taxis');
+const driversRouter = require('./routes/drivers');
+const initRouter = require('./routes/init');
+const pricesRouter = require('./routes/prices');
 
 // sprint 2
-var shiftsRouter = require('./routes/shifts');
-var taxiOrdersRouter = require('./routes/taxiOrders');
-var ridesRouter = require('./routes/rides');
+const shiftsRouter = require('./routes/shifts');
+const taxiOrdersRouter = require('./routes/taxiOrders');
+const ridesRouter = require('./routes/rides');
 
 // sprint 3
-var reportsRouter = require('./routes/reports');
+const reportsRouter = require('./routes/reports');
 
-var app = express();
+const app = express();
 
 // Set up mongoose connection
 const mongoose = require("mongoose");

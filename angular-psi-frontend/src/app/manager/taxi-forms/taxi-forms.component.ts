@@ -23,10 +23,10 @@ export class ManagerTaxiFormsComponent {
   constructor(private taxiService: TaxiService) {}
 
   acquisition(): void {
-    var licensePlate = (document.getElementById("licensePlate") as HTMLInputElement).value.trim();
-    var purchaseYear = (document.getElementById("purchaseYear") as HTMLInputElement).value.trim();
+    const licensePlate = (document.getElementById("licensePlate") as HTMLInputElement).value.trim();
+    const purchaseYear = (document.getElementById("purchaseYear") as HTMLInputElement).value.trim();
 
-    var licensePlateRegex = /^[a-zA-Z0-9]{2}-[a-zA-Z0-9]{2}-[a-zA-Z0-9]{2}$/;
+    const licensePlateRegex = /^[a-zA-Z0-9]{2}-[a-zA-Z0-9]{2}-[a-zA-Z0-9]{2}$/;
     if (!licensePlateRegex.test(licensePlate)) {
       alert("License plate must be in the format: AA-00-AA");
       return;
