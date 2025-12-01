@@ -61,7 +61,7 @@ Issues a resolver:
     Severity: Blocker
     Lifecycle interface 'OnInit' should be implemented for method 'ngOnInit'. 
     Solução: importar e adicionar as assinaturas das classes "implements OnInit"
-  - Unexpected var use let or const instead (vários componentes): 
+  - Unexpected var use let or const instead (vários ficheiros): 
     Severity: High
     Variables should be declared with "let" or "const"
     Solução: usar "let" ou "const" inves de "var"
