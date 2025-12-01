@@ -257,10 +257,17 @@ exports.finish_ride = [
 
 // obter uma viagem pelo pedido de taxi feito pelo cliente
 exports.get_ride_by_taxi_order = async (req, res) => {
-    const { taxiOrderId } = req.params;
+    const taxiOrderId = req.params.taxiOrderId?.toString(); // sanitize input
 
-    const ride = await Ride.findOne({ taxiOrder: taxiOrderId, 'timePeriod.end': { $exists: true, $ne: null } })
-        .populate('shift')
+    // Validar para evitar NoSQL injection
+    if (!mongoose.Types.ObjectId.isValid(taxiOrderId)) {
+        return res.status(400).json({ error: "Invalid Taxi Order ID format" });
+    }
+
+    const ride = await Ride.findOne({
+        taxiOrder: new mongoose.Types.ObjectId(taxiOrderId),
+        'timePeriod.end': { $exists: true, $ne: null }
+    }).populate('shift');
 
     return res.json(ride);
 };

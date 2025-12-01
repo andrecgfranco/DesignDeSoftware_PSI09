@@ -1,0 +1,44 @@
+Notas de Análise SonarQube – Projeto DesignDeSoftware
+
+→ Linhas de código totais analisadas: ~10.300  
+→ Repartição:
+   • Frontend Angular – 8.424 linhas  
+   • Backend Express – 1.896 linhas  
+
+Qualidade Geral
+- Quality Gate ainda não calculado.
+- Grande parte das issues registadas estão associadas a Maintainability.
+- Issues de Security quase inexistentes (apenas 1 ocorrência detetada no backend).
+
+Security
+- 1 issue no backend express-psi-backend (ride controller)
+- 4 *Security Hotspots* ao total
+- S/ vulnerabilidades críticas assinaladas
+
+Reliability
+- Total: 29 issues (21 no frontend + 8 no backend)
+- Nenhum erro crítico – maioria consideradas moderadas/baixas
+
+Maintainability (principais problemas)
+- Total: 351 issues  
+- 294 no frontend | 57 no backend
+- Problemas mais frequentes:
+  Falhas de contraste no CSS (acessibilidade)  
+  Código redundante / imports não utilizados  
+  Estrutura e legibilidade do código a melhorar  
+
+Duplicação
+- Frontend: 1.5%  
+- Backend: 8.5% (potencial para otimização e remoção de código repetido)
+
+Conclusões rápidas
+- O projeto está funcional mas tem elevada necessidade de melhoria de manutenibilidade.
+- A correção imediata deve focar-se em:
+  1. Limpeza de imports e código morto.
+  2. Corrigir warnings de acessibilidade e formatação CSS.
+  3. Reduzir duplicação no backend.
+
+Issues a resolver: 
+  - Segurança no ride controller:
+    Change this code to not construct database queries directly from user-controlled data.
+    NoSQL operations should not be vulnerable to injection attacks
