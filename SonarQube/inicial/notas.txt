@@ -41,4 +41,5 @@ Conclusões rápidas
 Issues a resolver: 
   - Segurança no ride controller:
     Change this code to not construct database queries directly from user-controlled data.
-    NoSQL operations should not be vulnerable to injection attacks
+    NoSQL operations should not be vulnerable to injection attacks  
+    Solução: Normalizar e validar o input usado na query, invés de usar o input diretamente na query, de modo a evitar injections. 
