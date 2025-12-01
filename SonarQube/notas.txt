@@ -39,7 +39,22 @@ Conclusões rápidas
   3. Reduzir duplicação no backend.
 
 Issues a resolver: 
-  - Segurança no ride controller:
+
+  Foi identificado um conjunto de ocorrências relacionadas com a propriedade `standalone: false`. 
+  O SonarQube sugere a adoção de componentes standalone para aumentar modularidade e reduzir 
+  dependência de NgModules, mas esta alteração exige reestruturação profunda de toda a aplicação Angular. 
+
+  Por implicar reescrita arquitetural em larga escala, esta recomendação foi documentada como melhoria 
+  futura e não aplicada no âmbito deste trabalho, dado que a mudança impactaria o funcionamento global 
+  sem ganho imediato proporcional.
+
+  - Segurança no ride controller (Input sujeito a injections): DONE
+    Severity: Blocker
     Change this code to not construct database queries directly from user-controlled data.
     NoSQL operations should not be vulnerable to injection attacks  
-    Solução: Normalizar e validar o input usado na query, invés de usar o input diretamente na query, de modo a evitar injections. 
+    Solução: Normalizar e validar o input usado na query, invés de usar o input diretamente na query, de modo a evitar injections.
+  -  Duplicate id "2buttons" em Client-wainting (reliability e maintainability): DONE
+    Severity: High
+    HTML elements should have unique IDs 
+    Solução: renomear o ID para algo unico.
+  - 
