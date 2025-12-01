@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import {OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import * as Leaflet from 'leaflet';
 import { Location } from '../../interfaces/location';
@@ -21,7 +22,7 @@ Leaflet.Icon.Default.mergeOptions({
   templateUrl: './client-order.component.html',
   styleUrl: './client-order.component.css'
 })
-export class ClientOrderComponent {
+export class ClientOrderComponent implements OnInit{
   taxiOrder: TaxiOrder = {
     client: {
       nif: "",

@@ -57,4 +57,7 @@ Issues a resolver:
     Severity: High
     HTML elements should have unique IDs 
     Solução: renomear o ID para algo unico.
-  - 
+  - Implementacao de OnInit() do angular:
+    Severity: Blocker
+    Lifecycle interface 'OnInit' should be implemented for method 'ngOnInit'. 
+    Solução: importar e adicionar as assinaturas das classes "implements OnInit"

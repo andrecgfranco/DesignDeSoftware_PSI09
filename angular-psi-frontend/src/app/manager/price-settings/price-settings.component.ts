@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PriceService } from '../../services/price/price.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-price-forms',
@@ -8,7 +9,7 @@ import { PriceService } from '../../services/price/price.service';
   styleUrls: ['./price-settings.component.css'],
 })
 
-export class ManagerPriceSettingsComponent {
+export class ManagerPriceSettingsComponent implements OnInit{
   price = {
     taxiType: '',
     pricePerMinute: 0

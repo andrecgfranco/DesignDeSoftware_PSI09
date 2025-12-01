@@ -4,14 +4,15 @@ import { TimePeriod } from '../../../interfaces/timePeriod';
 import { DriverSubtotals, ReportSubtotals, SubtotalInfo, TaxiSubtotals } from '../../../interfaces/report';
 import { ReportService } from '../../../services/report/report.service';
 import { Address } from '../../../interfaces/address';
-
+import { OnInit } from '@angular/core';
+import { __importDefault } from 'tslib';
 @Component({
   selector: 'app-subtotal-distance',
   standalone: false,
   templateUrl: './subtotal-distance.component.html',
   styleUrl: './subtotal-distance.component.css'
 })
-export class SubtotalDistanceComponent {
+export class SubtotalDistanceComponent implements OnInit{
 
   pressed: boolean = false;
   startDate: Date | undefined;

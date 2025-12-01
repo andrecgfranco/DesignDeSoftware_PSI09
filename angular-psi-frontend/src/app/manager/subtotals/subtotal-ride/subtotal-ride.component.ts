@@ -4,6 +4,7 @@ import { ReportService } from '../../../services/report/report.service';
 import { TimePeriod } from '../../../interfaces/timePeriod';
 import { DriverSubtotals, ReportSubtotals, TaxiSubtotals } from '../../../interfaces/report';
 import { Address } from '../../../interfaces/address';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-subtotal-ride',
@@ -11,7 +12,7 @@ import { Address } from '../../../interfaces/address';
   templateUrl: './subtotal-ride.component.html',
   styleUrl: './subtotal-ride.component.css'
 })
-export class SubtotalRideComponent {
+export class SubtotalRideComponent implements OnInit{
   pressed: boolean = false;
   startDate: Date | undefined;
   endDate: Date | undefined;

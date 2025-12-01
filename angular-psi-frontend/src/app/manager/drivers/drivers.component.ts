@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Driver } from '../../interfaces/driver';
 import { DriverService } from '../../services/driver/driver.service';
-import { MessageService } from '../../services/message/message.service';
+import {OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-drivers',
@@ -9,7 +9,8 @@ import { MessageService } from '../../services/message/message.service';
   templateUrl: './drivers.component.html',
   styleUrl: './drivers.component.css'
 })
-export class ManagerDriversComponent {
+
+export class ManagerDriversComponent implements OnInit{
 
   clicked = false;
   drivers: Driver[] = [];

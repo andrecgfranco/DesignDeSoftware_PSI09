@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import {OnInit } from '@angular/core';
 import { RideStart } from '../../../interfaces/rideStart';
 import { Address } from '../../../interfaces/address';
 import { TaxiOrderService } from '../../../services/taxi-order/taxiOrder.service';
@@ -14,7 +14,7 @@ import { GeoService } from '../../../services/geo/geo.service';
   templateUrl: './start-ride.component.html',
   styleUrl: './start-ride.component.css'
 })
-export class StartRideComponent {
+export class StartRideComponent implements OnInit{
 
   rideStart: RideStart = {
     client: { name: '', nif: '', gender: 'male' },

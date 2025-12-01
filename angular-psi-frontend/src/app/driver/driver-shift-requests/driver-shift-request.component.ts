@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -16,7 +17,7 @@ import { ShiftService } from '../../services/shift/shift.service';
   templateUrl: './driver-shift-request.component.html',
   styleUrl: './driver-shift-request.component.css',
 })
-export class DriverShiftRequestComponent {
+export class DriverShiftRequestComponent implements OnInit{
   taxi: Taxi | undefined;
 
   shift: Shift | undefined;
