@@ -141,7 +141,7 @@ export class SubtotalTimeComponent implements OnInit{
   rideDuration(start: Date, end: Date): number {
     const startTime = new Date(start).getTime();
     const endTime = new Date(end).getTime();
-    return parseFloat(((endTime - startTime) / 3600000).toFixed(2));
+    return Number.parseFloat(((endTime - startTime) / 3600000).toFixed(2));
   }
   get orderedTaxisByHoursDesc() {
     return this.subtotals?.taxis?.slice().sort((a, b) => b.totalHours - a.totalHours);

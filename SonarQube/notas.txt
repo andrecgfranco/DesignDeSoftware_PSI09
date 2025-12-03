@@ -57,6 +57,11 @@ Issues a resolver:
     Severity: High
     Variables should be declared with "let" or "const"
     Solução: usar "let" ou "const" inves de "var"
+  - Uso de Number.isNaN e Number.parseFloat (varios ficheiros):
+    Severity: Medium
+    Prefer `Number.parseFloat` over `parseFloat`.
+    Prefer `Number.isNaN` over `isNaN`.
+    Solução: Alterar para Number.* todas as ocorrências
 
   Foi identificado um conjunto de ocorrências com severidade "Blocker" relacionadas com a propriedade `standalone: false`. 
   O SonarQube sugere a adoção de componentes standalone para aumentar modularidade e reduzir 
