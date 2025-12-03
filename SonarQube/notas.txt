@@ -88,11 +88,12 @@ Security
 - Nenhuma vulnerabilidade crítica identificada
 
 Reliability
-- Após correções → 23 issues ativas
+- Após correções → 4 issues ativas
 - Sem problemas classificados como High severity
 
 Maintainability
-- Após melhorias → 312 issues restantes  
+- Após melhorias → 293 issues restantes  
+- 157 Mediums, 103 Lows e 33 Blockers (standalone=false)
 - Principais causas:
   • Falhas de contraste CSS  
   • Código redundante / imports não utilizados  
@@ -115,7 +116,7 @@ Conclusão Geral
 | Métrica             | Antes       | Depois      |
 |---------------------|-------------|-------------|
 | Security Issues     | 1           | 0           |
-| Reliability Issues  | 29          | 23          |
-| Maintainability     | 351         | 312         |
+| Reliability Issues  | 29          | 4           |
+| Maintainability     | 351         | 293         |
 | Duplicação Backend  | 8.5%        | 8.5%        |
 | Duplicação Frontend | 1.5%        | 1.5%        |
