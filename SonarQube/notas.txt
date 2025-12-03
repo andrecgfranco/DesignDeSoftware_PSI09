@@ -62,6 +62,7 @@ Issues a resolver:
     Prefer `Number.parseFloat` over `parseFloat`.
     Prefer `Number.isNaN` over `isNaN`.
     Solução: Alterar para Number.* todas as ocorrências
+  - Outros pequenos issues de reliability 
 
   Foi identificado um conjunto de ocorrências com severidade "Blocker" relacionadas com a propriedade `standalone: false`. 
   O SonarQube sugere a adoção de componentes standalone para aumentar modularidade e reduzir 

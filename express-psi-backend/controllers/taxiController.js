@@ -237,7 +237,7 @@ function validateLicensePlate(unfilteredPlate) {
     throw new Error("License plate is required.");
   }
 
-  const filteredPlate = unfilteredPlate.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();    // remover tudo que nao for letra ou numero, e deixar upperCase
+  const filteredPlate = unfilteredPlate.replaceAll(/[^a-zA-Z0-9]/g, '').toUpperCase();    // remover tudo que nao for letra ou numero, e deixar upperCase
 
   if (filteredPlate.length !== 6) {
     throw new Error("License plate must have exactly 6 alphanumeric characters.");
