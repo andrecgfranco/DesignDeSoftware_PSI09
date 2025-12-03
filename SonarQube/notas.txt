@@ -74,7 +74,7 @@ Issues a resolver:
 
   Os issues restantes prendem-se maioritariamente em questões de baixa importancia para o funcionamento do projeto, pequenas alteração espalhadas por 
   todos os ficheiros como: 
-    Imports não usados ou repetidos, minimal contrast requirements, duplicações e recomendações como usar "Number.isNaN" invés de "isNaN"
+    Imports não usados ou repetidos, minimal contrast requirements, duplicações 
 
 
 Qualidade Geral - Após correções
@@ -89,12 +89,11 @@ Security
 - Nenhuma vulnerabilidade crítica identificada
 
 Reliability
-- Após correções → 4 issues ativas
-- Sem problemas classificados como High severity
+- Após correções → 0 issues ativas
 
 Maintainability
-- Após melhorias → 293 issues restantes  
-- 157 Mediums, 103 Lows e 33 Blockers (standalone=false)
+- Após melhorias → 292 issues restantes  
+- 157 Mediums, 102 Lows e 33 Blockers (standalone=false)
 - Principais causas:
   • Falhas de contraste CSS  
   • Código redundante / imports não utilizados  
@@ -117,7 +116,7 @@ Conclusão Geral
 | Métrica             | Antes       | Depois      |
 |---------------------|-------------|-------------|
 | Security Issues     | 1           | 0           |
-| Reliability Issues  | 29          | 4           |
-| Maintainability     | 351         | 293         |
+| Reliability Issues  | 29          | 0           |
+| Maintainability     | 351         | 292         |
 | Duplicação Backend  | 8.5%        | 8.5%        |
 | Duplicação Frontend | 1.5%        | 1.5%        |
