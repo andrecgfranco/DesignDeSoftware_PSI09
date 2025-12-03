@@ -86,7 +86,7 @@ export class StartRideComponent implements OnInit{
       return 'Invalid client name.';
     if (!['male', 'female'].includes(client.gender)) return 'Gender must be male or female.';
     if (!shift) return 'Shift is missing.';
-    if (!timePeriod.start || isNaN(timePeriod.start.getTime()))
+    if (!timePeriod.start || Number.isNaN(timePeriod.start.getTime()))
       return 'Start time must be a valid date.';
     if (start.lat < -90 || start.lat > 90)
       return 'Start address latitude must be between -90 and 90.';

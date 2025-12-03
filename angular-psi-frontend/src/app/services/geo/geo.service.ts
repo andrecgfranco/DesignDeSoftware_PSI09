@@ -44,7 +44,7 @@ export class GeoService {
         .then(data => {
           if (!data || data.length === 0) throw new Error('Address not found');
           const { lat, lon } = data[0];
-          return { lat: parseFloat(lat), lon: parseFloat(lon) };
+          return { lat: Number.parseFloat(lat), lon: Number.parseFloat(lon) };
         })
     );
   }

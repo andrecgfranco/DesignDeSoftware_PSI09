@@ -190,7 +190,7 @@ export class DriverClientTaxiOrderComponent implements OnInit, OnDestroy {
           taxi: this.taxi?._id!,
           location: this.driverLocation!,
           distance: found.distance,
-          price: parseFloat(total.toFixed(2))
+          price: Number.parseFloat(total.toFixed(2))
         };
 
         // aceitar pedido e enviar a oferta no body

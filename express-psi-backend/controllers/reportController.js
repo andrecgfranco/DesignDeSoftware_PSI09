@@ -45,8 +45,8 @@ exports.get_report_totals = [
 
         res.status(200).json({
             totalRides: rides.length,
-            totalHours: parseFloat(totalHours.toFixed(2)),
-            totalDistance: parseFloat(totalDistance.toFixed(2))
+            totalHours: Number.parseFloat(totalHours.toFixed(2)),
+            totalDistance: Number.parseFloat(totalDistance.toFixed(2))
         });
     }),
 ];
@@ -86,7 +86,7 @@ exports.get_report_subtotals = [
 
             const startTime = new Date(ride.timePeriod.start);
             const endTime = new Date(ride.timePeriod.end);
-            const duration = parseFloat(((endTime - startTime) / 3600000).toFixed(2));
+            const duration = Number.parseFloat(((endTime - startTime) / 3600000).toFixed(2));
 
             const distance = ride.distanceKm;
 

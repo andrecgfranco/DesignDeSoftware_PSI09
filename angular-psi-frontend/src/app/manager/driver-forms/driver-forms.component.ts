@@ -126,7 +126,7 @@ export class ManagerDriverFormsComponent {
     }
 
     const yearNum = Number(birthYear);
-    if (isNaN(yearNum)) {
+    if (Number.isNaN(yearNum)) {
       alert('Invalid birth year: must be a number.');
       return;
     }

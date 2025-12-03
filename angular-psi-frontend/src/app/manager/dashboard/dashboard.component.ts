@@ -83,7 +83,7 @@ export class ManagerDashboardComponent implements OnInit {
     const timeEnd = new Date(endIso);
 
 
-    if (isNaN(timeStart.getTime()) || isNaN(timeEnd.getTime())) {
+    if (Number.isNaN(timeStart.getTime()) || Number.isNaN(timeEnd.getTime())) {
       alert('Please Fill all Dates and Hours!');;
       return;
     }

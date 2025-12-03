@@ -214,7 +214,7 @@ exports.finish_ride = [
         const d = 2 * R * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
         ride.end = req.body.end;
-        ride.distanceKm = parseFloat(d.toFixed(2));
+        ride.distanceKm = Number.parseFloat(d.toFixed(2));
         ride.timePeriod.end = timePeriod.end;
         ride.endAddress = {
             street: req.body.endAddress.street,
@@ -248,7 +248,7 @@ exports.finish_ride = [
             totalCost += rate;
         }
 
-        ride.price = parseFloat(totalCost.toFixed(2));
+        ride.price = Number.parseFloat(totalCost.toFixed(2));
 
         await ride.save();
         res.json(ride);

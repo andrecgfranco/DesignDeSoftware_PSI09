@@ -38,7 +38,7 @@ export class ManagerTaxiFormsComponent {
     }
 
     const yearNum = Number(purchaseYear);
-    if (isNaN(yearNum)) {
+    if (Number.isNaN(yearNum)) {
       alert("Invalid purchase year: must be a number.");
       return;
     }

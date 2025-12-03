@@ -127,7 +127,7 @@ export function computeTripCost(
   const [h1, m1] = start.split(':').map(Number);
   const [h2, m2] = end.split(':').map(Number);
 
-  if ([h1, m1, h2, m2].some((n) => isNaN(n))) {
+  if ([h1, m1, h2, m2].some((n) => Number.isNaN(n))) {
     console.error('Invalid timespan.');
     return 0;
   }
@@ -150,6 +150,6 @@ export function computeTripCost(
     total += costThisMinute;
   }
 
-  return parseFloat(total.toFixed(2));
+  return Number.parseFloat(total.toFixed(2));
 }
 

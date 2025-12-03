@@ -88,7 +88,7 @@ export class ManagerDriverEditComponent implements OnInit {
     }
 
     const yearNum = Number(this.driver!.birthYear);
-    if (isNaN(yearNum)) {
+    if (Number.isNaN(yearNum)) {
       alert('Invalid birth year: must be a number.');
       return;
     }

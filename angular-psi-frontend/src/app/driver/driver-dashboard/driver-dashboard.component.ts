@@ -31,7 +31,7 @@ export class DriverDashboardComponent implements OnInit {
     const end = new Date(`${this.shiftEnd.date}T${this.shiftEnd.time}`);
     const now = new Date();
 
-    if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+    if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
       alert('Please fill in all dates and times.');
       return;
     }
