@@ -1,0 +1,17 @@
+Rationale — Component-and-Connector View
+
+Esta Component-and-Connector View foi definida para representar de forma clara o fluxo de execução principal do sistema e as responsabilidades de cada componente em tempo de execução.
+
+O frontend Angular atua como camada de apresentação, onde os componentes tratam a interação com o utilizador e delegam toda a lógica de comunicação aos services. Estes services encapsulam chamadas REST (HTTP/JSON), garantindo separação de responsabilidades e reduzindo o acoplamento entre UI e backend.
+
+O backend Express funciona como camada de aplicação, recebendo pedidos HTTP através dos routes e encaminhando-os para os controllers adequados. Os controllers concentram a lógica de negócio e interagem com a camada de dados exclusivamente através dos modelos Mongoose.
+
+A persistência é assegurada pelo MongoDB, acedido através do Mongoose, que fornece abstração, validação e mapeamento objeto-documento.
+
+Esta organização promove:
+- Separação clara de responsabilidades
+- Baixo acoplamento entre camadas
+- Facilidade de manutenção e evolução
+- Consistência com uma arquitetura web em camadas baseada em serviços REST
+
+O fluxo User → Angular Component → Angular Service → Express Controller → MongoDB reflete o percurso típico de execução das funcionalidades principais do sistema.
